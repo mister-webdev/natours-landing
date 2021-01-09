@@ -15,9 +15,14 @@
     height: 7rem;
     border-radius: 50%;
     background: $clr-white;
-    box-shadow: 0 1rem 3rem rgba($clr-black, .1);
+    box-shadow: 0 1rem 3rem rgba($clr-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 2.5rem;
+      right: 4.5rem;
+    }
   }
 
   &__background {
@@ -29,7 +34,12 @@
     height: 6rem;
     border-radius: 50%;
     background-image: radial-gradient($clr-primary-light, $clr-primary-dark);
-    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include respond(tab-port) {
+      top: 3rem;
+      right: 5rem;
+    }
   }
 
   &__nav {
@@ -42,7 +52,7 @@
     opacity: 0;
     width: 0;
     transform: scale(0) rotate(-30deg);
-    transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &__list {
@@ -71,14 +81,14 @@
         $clr-white 50%
       );
       background-size: 230%;
-      transition: all .4s cubic-bezier(0.76, 0, 0.24, 1);
+      transition: all 0.4s cubic-bezier(0.76, 0, 0.24, 1);
     }
 
     &:hover,
     &:active {
       background-position: 100%;
       color: $clr-primary;
-      transform: translateX(1rem); 
+      transform: translateX(1rem);
     }
   }
 
@@ -89,7 +99,7 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
-    transform: scale(1);  
+    transform: scale(1);
   }
 
   &__icon {
@@ -109,15 +119,15 @@
       content: '';
       position: absolute;
       left: 0;
-      transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
 
     &::before {
-      top: -.9rem;
+      top: -0.9rem;
     }
 
     &::after {
-      top: .9rem;
+      top: 0.9rem;
     }
   }
 
