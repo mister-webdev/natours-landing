@@ -5,11 +5,21 @@
   margin: 0 auto;
   padding: 6rem;
   padding-left: 9rem;
-  box-shadow: 0 3rem 6rem rgba($clr-black, .1);
-  background: rgba($clr-white, .5);
+  box-shadow: 0 3rem 6rem rgba($clr-black, 0.1);
+  background: rgba($clr-white, 0.5);
   border-radius: 3px;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
 
   & > * {
     transform: skewX(12deg);
@@ -24,6 +34,10 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     overflow: hidden;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -31,11 +45,15 @@
     height: 100%;
     object-fit: cover;
     transform: scale(1.4);
-    transition: transform .3s;
+    transition: transform 0.3s;
   }
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {
@@ -48,7 +66,7 @@
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
-    transition: .3s;
+    transition: 0.3s;
     backface-visibility: hidden;
   }
 
