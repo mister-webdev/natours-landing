@@ -1,3 +1,6 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
 .header {
   position: relative;
   height: 95vh;
@@ -6,10 +9,19 @@
       rgba($clr-primary-light, 0.8),
       rgba($clr-primary-dark, 0.8)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 600px) {
+      background-image: linear-gradient(
+      to right bottom,
+      rgba($clr-secondary-light, 0.8),
+      rgba($clr-secondary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
